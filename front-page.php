@@ -43,29 +43,19 @@ endif; ?>
 <div class="home-columns clearfix">
 
     <div class="one-half">
-        <?php // opinion posts loop begins here
-        $args = array (
-            'category_name' => 'news',
-            'posts_per_page' => 2,
-            'orderby' => 'title',
-            'order' => 'ASC'
+        <?php // Branches display begins here
+        $catStrings = array ('computer-science', 'electrical', 'biology', 'wordpress',
+                        'physics', 'mathematics', 'history' 
         );
-        $opinionPosts = new WP_Query($args);
-        //$opinionPosts = new WP_Query('cat=10&posts_per_page=2&orderby=title&order=ASC');
-
-        if ($opinionPosts->have_posts()) :
+        $separator = ", ";
+        $output = '';
         
-            while ($opinionPosts->have_posts()) : $opinionPosts->the_post();
-                ?>
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <?php the_excerpt(); ?>
-            <?php endwhile;  
-            
-            else :
-                //fallback no content message
-        endif;
-        wp_reset_postdata(); ?>
-
+        foreach ($catStrings as $category) {
+            $catId = get_category_by_slug($category);
+            $output .= '<a href="' . get_category_link($catId->term_id) . '">' . $catId->cat_name . '</a>' . $separator;
+        }
+        echo trim($output, $separator);
+        ?>
     </div>
 
     <div class="one-half last">
