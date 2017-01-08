@@ -1,5 +1,5 @@
 /*
-Theme Name: LNSite
+Theme Name: LNSiteNew
 Author: Atish
 Author URL: 
 Version: 1.0
@@ -15,14 +15,20 @@ body {
 
 a:link,
 a:visited {
-    color: #006ec3;
+    color: #006ec3; 
+    /*color: #0095ff; */
 }
 
 p {
     line-height: 1.65em;
 }
 
-/* General Layout */
+/* Clearfix */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* General Layout for header and footer*/
 div.container {
     max-width: 920px;
     margin: 0 auto;
@@ -30,125 +36,43 @@ div.container {
     padding-right: 20px;
 }
 
-/* Header */
-.site-header {
-    border-bottom: 2px solid #999;
-}
-
-/* Post Columns */
-.home-columns {
-    padding-top: 30px;
-}
-
-.one-half {
-    width: 45%;
-    float: left;
-    margin-right: 10%;
-}
-
-.last {
-    margin-right: 0;
-}
-
-/* Main Column */
-.main-column {
-    width: 66%;
-    float: left;
-}
-
-/* Side Column */
-.secondary-column {
-    width: 30%;
-    float: right;
-}
-
-/* Footer Widgets Area */
-.footer-widget-area {
-    width: 25%;
-    float: left;
-    padding-right: 40px;
-    box-sizing: border-box;
-}
-
-/* Footer */
-.site-footer {
-    margin-top: 30px;
-    border-top: 2px solid #999;
-}
-
-article.post {
-    border-bottom: 2px dotted #bbbbbb;
-    margin-bottom: 20px;
-}
-
-article.post:last-of-type {
-    border-bottom: none;
-}
-
-/* Aside Styles */
-article.post-aside,
-article.post-link {
-    font-size: 125%;
-    background-color: #FFF5CB;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
-}
-
-.mini-meta {
-    font-size: 68%;
-    margin: 0;
-    color: #777;
-}
-
-/* Link Post Format Styles */
-article.post-link {
-    padding: 0;
-    background-color: #E0EBFF;
-}
-
-article.post-link a {
-    display: block;
-    padding: 20px;
-}
-
-/* Post Format Gallery Styles */
-article.post-gallery {
-    background-color: #222;
-    color: #FFF;
-    padding: 20px;
-}
-
-article.post-gallery img {
-    border: none!important;
-}
-
-article.post-gallery h2 {
-    text-align: center;
-}
-
-/* Navigation Menus */
+/* Navigation Menus in header.php */
 .site-nav ul {
     margin: 0;
     padding: 0;
 }
 
-.site-nav ul:before, .site-nav ul:after { content: ""; display: table; }
-.site-nav ul:after { clear: both; }
-.site-nav ul { *zoom: 1; }
+.site-nav ul:before, 
+.site-nav ul:after { 
+    content: ""; 
+    display: table; 
+}
+
+.site-nav ul:after { 
+    clear: both; 
+}
+
+.site-nav ul { 
+    *zoom: 1; 
+}
 
 .site-nav ul li {
     list-style: none;
     float: left;
 }
 
-/* Site Header Menu */
-.site-header nav ul li {
+/* Header in header.php */
+.site-header {
+    border-bottom: 2px solid #999;
+}
+
+/* Site Header Menu for header.php */
+.site-header-nav ul li {
     margin-right: 5px;
 }
 
-.site-header nav ul li a:link,
-.site-header nav ul li a:visited {
+.site-header-nav ul li a:link,
+.site-header-nav ul li a:visited {
     display: block;
     padding: 10px 18px;
     border: 1px solid #BBB;
@@ -156,17 +80,61 @@ article.post-gallery h2 {
     text-decoration: none;
 }
 
-.site-header nav ul li a:hover {
+.site-header-nav ul li a:hover {
     background-color: #ECECEC;
 }
 
-.site-header nav ul li.current-menu-item a:link,
-.site-header nav ul li.current-menu-item a:visited,
-.site-header nav ul li.current-page-ancestor a:link,
-.site-header nav ul li.current-page-ancestor a:visited {
+.site-header-nav ul li.current-menu-item a:link,
+.site-header-nav ul li.current-menu-item a:visited,
+.site-header-nav ul li.current-page-ancestor a:link,
+.site-header-nav ul li.current-page-ancestor a:visited {
     font-weight: bold;
     background-color: #006ec3;
     color: #FFF;
+}
+
+/* Columns for front-page */
+.home-columns {
+    padding-top: 30px;
+}
+
+.one-half {
+    width: 35%;
+    float: left;
+    margin-right: 10%;
+}
+
+.last {
+    width: 55%;
+    margin-right: 0;
+}
+
+/* Department Header Menu */
+.departments-nav ul li {
+    margin-right: 10px;
+}
+
+.departments-nav ul li a:link,
+.departments-nav ul li a:visited {
+    border: 1px solid #BBB;
+}
+
+/* Main Column for blog page*/
+.main-column {
+    width: 66%;
+    float: left;
+}
+
+/* Side Column for blog page*/
+.secondary-column {
+    width: 30%;
+    float: right;
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 30px;
+    border-top: 2px solid #999;
 }
 
 .site-footer nav ul li {
@@ -181,76 +149,17 @@ article.page h2 {
     margin-bottom: 15px;
 }
 
-/* Clearfix */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
-
-/*Two Column Title Layout */
-div.title-column {
-    width: 30%;
-    float: left;
-}
-
-div.text-column {
-    width: 70%;
-    float: right;
-}
-
-/*Info Box Styles */
-div.info-box {
-    width: 30%;
-    float: right;
-    margin: 0 0 30px 30px;
-    padding: 20px;
-    background-color: #EEE;
-}
-
-div.info-box h4 {
-    margin-bottom: 6px;
-}
-
-div.info-box p {
-    font-size: 85%;
-}
-
-/* Children Links */
-.children-links {
+/* Post Layout */
+article.post {
+    border-bottom: 2px dotted #bbbbbb;
     margin-bottom: 20px;
-    font-size: 80%;
 }
 
-.children-links a:link,
-.children-links a:visited {
-    text-decoration: none;
+article.post:last-of-type {
+    border-bottom: none;
 }
 
-.children-links li {
-    margin-right: 20px;
-}
-
-.children-links .parent-link {
-    float: left;
-    margin-right: 20px;
-    padding-right: 20px;
-    border-right: 1px solid #DDD;
-    font-size: 120%;
-    font-weight: bold;
-}
-
-.children-links .parent-link a:link,
-.children-links .parent-link a:visited {
-    color: #333;
-}
-
-.children-links .current_page_item a:link,
-.children-links .current_page_item a:visited {
-    border-bottom: 1px solid #DDD;
-    color: #333;
-    cursor: default;
-}
-
-/* Post Styles */
+/* Post Styles in file content.php*/
 .post h2 {
     margin-bottom: 0;
 }
@@ -282,7 +191,7 @@ img {
     left: 0;
 }
 
-/* Search */
+/* Search in header.php*/
 div.hd-search {
     float: right;
 }

@@ -7,29 +7,6 @@ if (have_posts()):
     
     <article class="post page">
 
-        <?php
-        if( has_children() OR $post->post_parent > 0) { ?>
-    
-            <nav class="site-nav children-links clearfix">
-    
-                <span class="parent-link"><a href="<?php echo get_the_permalink(get_top_ancestor_id()); ?>"><?php echo get_the_title(get_top_ancestor_id()); ?>
-        
-                </a></span>    
-        
-                <ul>
-                    <?php
-                    $args = array(
-                        'child_of' => get_top_ancestor_id(),
-                        'title_li' => ''
-                    );
-                    ?>
-            
-                    <?php wp_list_pages($args); ?>
-                </ul>
-            </nav>
-
-        <?php } ?>
-
         <?php the_content(); ?>
     </article>
     
@@ -47,14 +24,13 @@ endif; ?>
         $catStrings = array ('computer-science', 'electrical', 'biology', 'wordpress',
                         'physics', 'mathematics', 'history' 
         );
-        $separator = ", ";
-        $output = '';
-        
+        $separator = " ";
+        $output = '<nav class="site-nav site-header-nav departments-nav clearfix"> <ul>';
         foreach ($catStrings as $category) {
             $catId = get_category_by_slug($category);
-            $output .= '<a href="' . get_category_link($catId->term_id) . '">' . $catId->cat_name . '</a>' . $separator;
+            $output .= '<li><a href="' . get_category_link($catId->term_id) . '">' . $catId->cat_name . '</a></li>' . $separator;
         }
-        echo trim($output, $separator);
+        echo trim($output, $separator).'</nav></ul>';
         ?>
     </div>
 
