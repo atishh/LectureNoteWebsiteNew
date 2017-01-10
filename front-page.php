@@ -28,7 +28,7 @@ endif; ?>
         $output = '<nav class="site-nav site-header-nav departments-nav clearfix"> <ul>';
         foreach ($catStrings as $category) {
             $catId = get_category_by_slug($category);
-            $output .= '<li><a href="' . get_category_link($catId->term_id) . '">' . $catId->cat_name . '</a></li>' . $separator;
+            $output .= '<li><a href="' . get_category_link($catId->term_id) . '" class = "btn-element">' . $catId->cat_name . '</a></li>' . $separator;
         }
         echo trim($output, $separator).'</nav></ul>';
         ?>
@@ -36,7 +36,7 @@ endif; ?>
 
     <div class="one-half last">
         <?php // news posts loop begins here
-        $newsPosts = new WP_Query('cat=1&posts_per_page=2&orderby=title&order=ASC');
+        $newsPosts = new WP_Query('orderby=title&order=ASC');
         
         if ($newsPosts->have_posts()) :
         

@@ -29,8 +29,9 @@ p {
 .clearfix { *zoom: 1; }
 
 /* General Layout for header and footer*/
+
 div.container {
-    max-width: 920px;
+    max-width: 920px; 
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -117,6 +118,16 @@ div.container {
 .departments-nav ul li a:link,
 .departments-nav ul li a:visited {
     border: 1px solid #BBB;
+}
+
+/* Department Header button elements */
+.btn-element {
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 7px;
+    font-size: 85%;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* Main Column for blog page*/
