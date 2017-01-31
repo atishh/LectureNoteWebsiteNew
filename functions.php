@@ -4,6 +4,8 @@ function LNSite_resources()
 {
     //Remove random part
     wp_enqueue_style('style', get_stylesheet_uri(), array(), rand(111,999));
+    //Remove random part
+	wp_enqueue_script('main_js', get_template_directory_uri() . '/js/main.js', NULL, rand(111,999), true);
 }
 
 add_action('wp_enqueue_scripts', 'LNSite_resources');

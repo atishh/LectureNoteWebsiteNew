@@ -6,12 +6,12 @@ function displayVideoPdf(divId, youVideo, pdfFile) {
 		var pdfFileFullPath = '/home/atish/Desktop/lecture videos/';
 		pdfFileFullPath += pdfFile;
 		var statement = '<div class="home-columns clearfix">' ;
-		statement += '<div class="one-half"> <iframe class="iframe-size" src="http://www.youtube.com/embed/';
+		statement += '<div class="one-half mobile-collapse"> <iframe class="iframe-size" src="http://www.youtube.com/embed/';
 		statement += youVideo;
-		statement += '" width="400" height="200" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>';
-		statement += '<div class="one-half last"> <iframe class="iframe-size" src="';
+		statement += '" width="400px" height="200px" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>';
+		statement += '<div class="one-half last mobile-collapse"> <iframe class="iframe-size" src="';
 		statement += pdfFileFullPath;
-		statement += '" style="width:400px; height:200px;" frameborder="0" allowfullscreen=""></iframe> <nav class="site-nav site-header-nav departments-nav clearfix"> <ul> <li><a href="';
+		statement += '" width="400px" height="200px" frameborder="0" allowfullscreen=""></iframe> <nav class="site-nav site-header-nav departments-nav clearfix"> <ul> <li><a href="';
 		statement += pdfFileFullPath;
 		statement += '" download="';
 		statement += pdfFile;

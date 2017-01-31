@@ -19,7 +19,7 @@ endif; ?>
 
 <div class="home-columns clearfix">
 
-    <div class="one-half">
+    <div class="one-half mobile-collapse">
         <?php // Branches display begins here
         $catStrings = array ('computer-science', 'electrical', 'biology', 'wordpress',
                         'physics', 'mathematics', 'history' 
@@ -30,11 +30,11 @@ endif; ?>
             $catId = get_category_by_slug($category);
             $output .= '<li><a href="' . get_category_link($catId->term_id) . '" class = "btn-element">' . $catId->cat_name . '</a></li>' . $separator;
         }
-        echo trim($output, $separator).'</nav></ul>';
+        echo trim($output, $separator).'</ul></nav>';
         ?>
     </div>
 
-    <div class="one-half last">
+    <div class="one-half last mobile-collapse">
         <?php // news posts loop begins here
         $newsPosts = new WP_Query('orderby=title&order=ASC');
         

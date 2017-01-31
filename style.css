@@ -110,6 +110,21 @@ div.container {
     margin-right: 0;
 }
 
+@media screen and (max-width: 800px) {
+	div.mobile-collapse {
+		width: auto;
+		float: none;
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	iframe.iframe-size {
+		width: 260px;
+		height: 180px;
+	}
+}
+
 /* Department Header Menu */
 .departments-nav ul li {
     margin-right: 10px;
@@ -218,10 +233,13 @@ div.hd-search #searchsubmit {
     padding: 5px 14px;
     border: none;
     vertical-align: top;
+    font-size: 80%;
 }
 
 div.hd-search #s {
     vertical-align: top;
     padding: 3px 0;
+    width: 150px;
+    font-size: 80%;
 }
 
