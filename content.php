@@ -5,7 +5,7 @@
         </div>     
   
         <h2><a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a></h2>
-        <p class="post-info"><?php the_time('F jS, Y g:i a'); ?> | by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> | Posted in
+        <p class="post-info"> Posted in
 
         <?php
         $categories = get_the_category();
@@ -26,13 +26,13 @@
         <?php if ( is_search() OR is_archive() ) { ?>
             <p>
             <?php echo get_the_excerpt(); ?>
-            <a href="<?php the_permalink(); ?>">Read more&raquo;</a>
+            <a href="<?php the_permalink(); ?>">Click here for more lectures&raquo;</a>
             </p>
 
         <?php } else { ?>
             <p>
             <?php echo get_the_excerpt(); ?>
-            <a href="<?php the_permalink(); ?>">Read more&raquo;</a>
+            <a href="<?php the_permalink(); ?>">Click here for more lectures&raquo;</a>
             </p>
 
         <?php } ?>
