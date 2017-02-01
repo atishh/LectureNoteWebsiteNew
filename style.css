@@ -110,6 +110,12 @@ div.container {
     margin-right: 0;
 }
 
+.default-mobile iframe.iframe-size {
+	width: 220px;
+	height: 180px;
+}
+
+
 @media screen and (max-width: 800px) {
 	div.mobile-collapse {
 		width: auto;

@@ -34,17 +34,16 @@ endif; ?>
         ?>
     </div>
 
-    <div class="one-half last mobile-collapse">
+    <div class="one-half last default-mobile mobile-collapse">
         <?php // news posts loop begins here
         $newsPosts = new WP_Query('orderby=title&order=ASC');
         
         if ($newsPosts->have_posts()) :
         
             while ($newsPosts->have_posts()) : $newsPosts->the_post();
-                ?>
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <?php the_excerpt(); ?>
-            <?php endwhile;  
+                get_template_part('content', get_post_format());
+			endwhile;
+            echo paginate_links();
             
             else :
                 //fallback no content message
