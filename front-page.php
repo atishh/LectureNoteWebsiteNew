@@ -19,9 +19,9 @@ endif; ?>
 
 <div class="home-columns clearfix">
 
-    <div class="one-half mobile-collapse">
+    <div class="one-half desktop-float mobile-collapse">
         <?php // Branches display begins here
-        $catStrings = array ('computer-science', 'electrical', 'biology', 'wordpress',
+        $catStrings = array ('computer-science', 'electrical', 'biology', 'mechanical',
                         'physics', 'mathematics', 'history' 
         );
         $separator = " ";

@@ -100,14 +100,16 @@ div.container {
 }
 
 .one-half {
-    width: 35%;
-    float: left;
-    margin-right: 10%;
+    width: 30%;
+    float: none;
+    margin-right: 5%;
 }
 
 .last {
-    width: 55%;
+    width: 60%;
+    float: right;
     margin-right: 0;
+    margin-left: 5%;
 }
 
 .default-mobile iframe.iframe-size {
@@ -115,12 +117,17 @@ div.container {
 	height: 180px;
 }
 
+.desktop-float {
+	position: fixed;
+}
 
 @media screen and (max-width: 800px) {
 	div.mobile-collapse {
 		width: auto;
 		float: none;
 		margin-right: 0;
+		margin-left: 0;
+		position: static;
 	}
 }
 
